@@ -28,7 +28,7 @@ public class LibraryController {
     private final BookMapper bookMapper;
 
     @GetMapping
-    public ResponseEntity<List<Book>> getAllBooks(@RequestParam(required = false) String title) {
+    public ResponseEntity<List<Book>> getAllBooks() {
 
         List<Book> books = new ArrayList<>();
 
@@ -50,10 +50,9 @@ public class LibraryController {
     @GetMapping("/{id}")
     public ResponseEntity<Optional<Book>> getBookById(@PathVariable Integer id) {
 
-
         var requestedBook  = libraryRepository.findById(id);
 
-        return new ResponseEntity<Optional<Book>>(requestedBook,HttpStatus.OK);
+        return new ResponseEntity<>(requestedBook,HttpStatus.OK);
     }
 
 }
