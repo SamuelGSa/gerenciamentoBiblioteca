@@ -23,7 +23,7 @@ public class BookDTO {
     private String actor;
 
     @JsonProperty("isbn")
-    private int isbn;
+    private Long isbn;
 
     @JsonProperty("publishingCompany")
     private String publishingCompany;

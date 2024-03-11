@@ -26,21 +26,21 @@ public class Book {
     private String actor;
 
     @Column(name = "isbn")
-    private int isbn;
+    private Long isbn;
 
-    @Column(name = "publishingCompany")
+    @Column(name = "publishing_company")
     private String publishingCompany;
 
-    @Column(name = "publicationDate")
+    @Column(name = "publication_date")
     private LocalDate publicationDate;
 
     @Column(name = "gender")
     private String gender;
 
-    @Column(name = "numberOfPages")
+    @Column(name = "numero_of_pages")
     private int numberOfPages;
 
     @Column(name = "model")
-    private ModelEnum model;
+    private String model;
 
 }
