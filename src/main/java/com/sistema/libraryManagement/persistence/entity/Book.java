@@ -1,17 +1,18 @@
-package com.sistema.libraryManagement.model;
+package com.sistema.libraryManagement.persistence.entity;
 
+import com.sistema.libraryManagement.core.constants.ModelEnum;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+
+import java.time.LocalDate;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "books")
 @Entity
-@Table(name = "book")
+@Data
 public class Book {
 
     @Id
@@ -31,12 +32,15 @@ public class Book {
     private String publishingCompany;
 
     @Column(name = "publicationDate")
-    private String publicationDate;
+    private LocalDate publicationDate;
 
     @Column(name = "gender")
     private String gender;
 
     @Column(name = "numberOfPages")
     private int numberOfPages;
+
+    @Column(name = "model")
+    private ModelEnum model;
 
 }

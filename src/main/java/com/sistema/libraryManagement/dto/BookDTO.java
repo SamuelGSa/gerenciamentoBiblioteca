@@ -1,10 +1,14 @@
 package com.sistema.libraryManagement.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.sistema.libraryManagement.core.constants.ModelEnum;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.time.LocalDate;
 
 @Getter
 @Setter
@@ -25,12 +29,16 @@ public class BookDTO {
     private String publishingCompany;
 
     @JsonProperty("publicationDate")
-    private String publicationDate;
+    @JsonFormat(pattern = "dd-MM-yyyy")
+    private LocalDate publicationDate;
 
     @JsonProperty("gender")
     private String gender;
 
     @JsonProperty("numberOfPages")
     private int numberOfPages;
+
+    @JsonProperty("model")
+    private ModelEnum model;
 
 }

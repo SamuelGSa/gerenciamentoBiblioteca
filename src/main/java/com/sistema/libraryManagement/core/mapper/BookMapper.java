@@ -1,7 +1,7 @@
-package com.sistema.libraryManagement.mapper;
+package com.sistema.libraryManagement.core.mapper;
 
 import com.sistema.libraryManagement.dto.BookDTO;
-import com.sistema.libraryManagement.model.Book;
+import com.sistema.libraryManagement.persistence.entity.Book;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 

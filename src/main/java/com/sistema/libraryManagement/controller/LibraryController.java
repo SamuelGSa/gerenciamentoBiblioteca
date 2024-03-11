@@ -1,13 +1,15 @@
 package com.sistema.libraryManagement.controller;
 
 import com.sistema.libraryManagement.dto.BookDTO;
-import com.sistema.libraryManagement.mapper.BookMapper;
-import com.sistema.libraryManagement.model.Book;
-import com.sistema.libraryManagement.repository.LibraryRepository;
+import com.sistema.libraryManagement.core.mapper.BookMapper;
+import com.sistema.libraryManagement.persistence.entity.Book;
+import com.sistema.libraryManagement.core.repository.LibraryRepository;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -17,8 +19,9 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/library")
 @AllArgsConstructor
+@Validated
+@Slf4j
 public class LibraryController {
-
     @Autowired
     LibraryRepository libraryRepository;
 
@@ -35,7 +38,7 @@ public class LibraryController {
     }
 
     @PostMapping
-    public ResponseEntity<Book> saveBook(@RequestBody BookDTO livro) {
+    public ResponseEntity<Book> saveBook( @RequestBody BookDTO livro) {
 
         Book book = bookMapper.mapDTOToModel(livro);
 
